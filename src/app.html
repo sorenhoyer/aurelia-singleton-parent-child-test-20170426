@@ -1,0 +1,31 @@
+<template>
+  <style>
+    .active a { color: red; font-weight: bold; }
+  </style>
+  <h1>How to replicate the problem</h1>
+  <p>The child page you start on when refreshing the page will bind parent multiple times which breaks binding</p>
+  <p>You can however just click the link to the other child, and it'll work as expected</p>
+  <p>Example</p>
+  <ul>
+    <li>you load the page for the first time and you land on child a</li>
+    <li>first, notice that the heading of the parent is not altered by the child</li>
+    <li>when you try to change language / dates in the parent, you're changes is not bound / updating in the child view</li>
+    <li>now, click the link to child b and DO NOT hit refresh just yet</li>
+    <li>notice that the parent heading is modified from the child b viewmodel</li>
+    <li>changes in the parent will also be bound / updated in the child-b as you type language or select date</li>
+    <li>not try to hit refresh on that child b view you're currently at</li>
+    <li>not it's just the opposite; now it's child a which works as expected</li>
+  </ul>
+  <p>So the problem with @singleton can be narrowed down to it not working on the initial page load. It does however seem to work when navigating to another route (but still not if you navigate back to the initial load route)</p>
+  <p>Also notice the alerts</p>
+  <p>The source code is here <a href="https://github.com/sorenhoyer/aurelia-singleton-parent-child-test-20170321">https://github.com/sorenhoyer/aurelia-singleton-parent-child-test-20170321</a> and the working gist (same code) using an older version of Aurelia can be found here <a href="https://gist.run/?id=c529ed1092d399dbab19d9eebdab3277">https://gist.run/?id=c529ed1092d399dbab19d9eebdab3277</a></p>
+  <ul>
+    <li >
+      <a href="#viewmodel-with-subrouter/shared-parent/child-a">child a</a>
+    </li>
+    <li >
+      <a href="#viewmodel-with-subrouter/shared-parent/child-b">child b</a>
+    </li>
+  </ul>
+  <router-view></router-view>
+</template>

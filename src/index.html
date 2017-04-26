@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Aurelia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      .shared-parent,
+      .shared-parent > form {
+        border: 5px solid green;
+        padding: 10px;
+      }
+      .shared-parent > form {
+        width: 50%;
+      }
+      
+      .child {
+        border: 5px solid blue;
+        margin-top: 10px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body aurelia-app>
+    <h1>Loading...</h1>
+    
+    <script src="https://jdanyow.github.io/rjs-bundle/node_modules/requirejs/require.js"></script>
+    <script src="https://jdanyow.github.io/rjs-bundle/config.js"></script>
+    <script src="https://jdanyow.github.io/rjs-bundle/bundles/aurelia.js"></script>
+    <script src="https://jdanyow.github.io/rjs-bundle/bundles/babel.js"></script>
+    <script>
+      require(['aurelia-bootstrapper']);
+    </script>
+  </body>
+</html>

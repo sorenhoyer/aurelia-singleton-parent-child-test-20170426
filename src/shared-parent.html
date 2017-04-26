@@ -1,0 +1,15 @@
+<template>
+  <div class="shared-parent">
+    <h1>1)Heading (from child, local): ${heading }</h1>
+
+    <br/>
+    <br/>
+    <form>
+      <label>Language: <input type="text" value.bind="language"></label>
+      <label>From Date: <input type="date" value.bind="fromdate"></label>
+      <label>To Date: <input type="date" value.bind="todate"></label>
+    </form>
+    
+    <slot name="somename"></slot>
+  </div>
+</template>
